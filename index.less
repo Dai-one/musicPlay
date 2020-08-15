@@ -1,0 +1,199 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+body{
+  height: 100%;
+}
+#app {
+  width: 100%;
+  height: 100vh;
+  background: url(./imgs/bg1.jpeg)  no-repeat  100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .app-con {
+    border-radius: 10px;
+    width: 800px;
+    height: 600px;
+    border: 1px solid #29abd3;
+    overflow: hidden;
+    .app-head {
+      height: 60px;
+      width: 100%;
+      background: #29abd3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      .app-logo {
+        font-size: 16px;
+        color: #fff;
+      }
+      .app-search {
+        width: 300px;
+        height: 30px;
+        border-radius: 20px;
+        background: #fff;
+        overflow: hidden;
+        display: flex;
+        #search{
+          width: 84%;
+          height: 30px;
+          border: none;
+          outline: none;
+          padding-left: 10px;
+        }
+        .search-img{
+          width: 16%;
+          height: 30px;
+          background: url(./imgs/zoom.png) center no-repeat;
+          cursor: pointer;
+        }
+      }
+      
+    }
+    .app-nav {
+      width: 800px;
+      height: 480px;
+      background-color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      .music-list {
+        height: 100%;
+        width: 200px;
+        border-right: 1px dashed #29abd3;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        .music-item{
+          width: 100%;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          .item-play{
+            width: 25px;
+            height: 25px;
+            background: url(imgs/table.png) -18px -18px;
+          }
+          .music-name{
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            text-align: center;
+            width: 145px;
+            color: white;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .music-mv{
+            width: 30px;
+            height: 20px;
+            background: url(imgs/table.png) left -45px;
+          }
+        }
+        
+      }
+      .palyer-img {
+        height: 100%;
+        width: 400px;
+        border-right: 1px dashed #29abd3;
+        position: relative;
+        .music-tentacle{
+          position: absolute;
+          transform: rotate(-25deg);
+          transform-origin: 12px 12px;
+          transition: all 2s;
+          left: 200px;
+          z-index: 2;
+        }
+        .playing{
+          transform: rotate(0);
+        }
+        .music-card{
+          top: 156px;
+          left: 156px;
+          position: absolute;
+          width: 150px;
+          height: 150px;
+        }
+        .compact-disc{
+          left: 100px;
+          top: 100px;
+          position: absolute;
+        }
+        .autoPlay{
+          animation-name: running;
+          animation-duration: 5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        @keyframes running {
+          0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+        }
+      }
+    
+      .message-box {
+        width: 200px;
+        .message-tit{
+          font-weight: 500;
+          padding: 5px;
+          height: 30px;
+        }
+        .message-list{
+          height: 450px;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          .item-box{
+            padding: 5px;
+            display: flex;
+            align-items: flex-start;
+            .head-portrait{
+              img{
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+              }
+            }
+            .message-con{
+              .title{
+                font-size: 16px;
+              }
+              .content{
+                font-size: 12px;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .app-footer {
+      height: 60px;
+      width: 100%;
+      background: #fff;
+      audio{
+        width: 100%;
+        outline: none;
+      }
+    }
+    
+    
+  }
+}
+
+
+
